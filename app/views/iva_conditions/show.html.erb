@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @iva_condition.code %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @iva_condition.description %>
+</p>
+
+<p>
+  <strong>Observation:</strong>
+  <%= @iva_condition.observation %>
+</p>
+
+<%= link_to 'Edit', edit_iva_condition_path(@iva_condition) %> |
+<%= link_to 'Back', iva_conditions_path %>

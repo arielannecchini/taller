@@ -1,0 +1,43 @@
+<h1>Listing customers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>First name</th>
+      <th>Last name</th>
+      <th>Document type</th>
+      <th>Document</th>
+      <th>Postal code</th>
+      <th>Iva condition</th>
+      <th>Birthday</th>
+      <th>Customer billing</th>
+      <th>Notes</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.document_type %></td>
+        <td><%= customer.document %></td>
+        <td><%= customer.postal_code %></td>
+        <td><%= customer.iva_condition.try(:description) %></td>
+        <td><%= customer.birthday %></td>
+        <td><%= customer.customer_billing_id %></td>
+        <td><%= customer.notes %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Customer', new_customer_path %>

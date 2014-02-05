@@ -1,0 +1,31 @@
+<h1>Listing street_types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Observation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @street_types.each do |street_type| %>
+      <tr>
+        <td><%= street_type.code %></td>
+        <td><%= street_type.description %></td>
+        <td><%= street_type.observation %></td>
+        <td><%= link_to 'Show', street_type %></td>
+        <td><%= link_to 'Edit', edit_street_type_path(street_type) %></td>
+        <td><%= link_to 'Destroy', street_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Street type', new_street_type_path %>

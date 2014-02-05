@@ -1,0 +1,41 @@
+<h1>Listing streets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Createstreet type</th>
+      <th>Street</th>
+      <th>Number</th>
+      <th>Floor</th>
+      <th>Department</th>
+      <th>Locality</th>
+      <th>Province</th>
+      <th>Country</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @streets.each do |street| %>
+      <tr>
+        <td><%= street.createStreet_type_id %></td>
+        <td><%= street.street %></td>
+        <td><%= street.number %></td>
+        <td><%= street.floor %></td>
+        <td><%= street.department %></td>
+        <td><%= street.locality_id %></td>
+        <td><%= street.province_id %></td>
+        <td><%= street.country_id %></td>
+        <td><%= link_to 'Show', street %></td>
+        <td><%= link_to 'Edit', edit_street_path(street) %></td>
+        <td><%= link_to 'Destroy', street, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Street', new_street_path %>

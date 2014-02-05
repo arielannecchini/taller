@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patent:</strong>
+  <%= @car.patent %>
+</p>
+
+<p>
+  <strong>Frame:</strong>
+  <%= @car.frame %>
+</p>
+
+<p>
+  <strong>Model:</strong>
+  <%= @car.model_id %>
+</p>
+
+<p>
+  <strong>Trademark:</strong>
+  <%= @car.trademark_id %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @car.color_id %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @car.year %>
+</p>
+
+<p>
+  <strong>Observation:</strong>
+  <%= @car.observation %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @car.customer_id %>
+</p>
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

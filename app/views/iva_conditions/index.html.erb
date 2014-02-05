@@ -1,0 +1,31 @@
+<h1>Listing iva_conditions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Description</th>
+      <th>Observation</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @iva_conditions.each do |iva_condition| %>
+      <tr>
+        <td><%= iva_condition.code %></td>
+        <td><%= iva_condition.description %></td>
+        <td><%= iva_condition.observation %></td>
+        <td><%= link_to 'Show', iva_condition %></td>
+        <td><%= link_to 'Edit', edit_iva_condition_path(iva_condition) %></td>
+        <td><%= link_to 'Destroy', iva_condition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Iva condition', new_iva_condition_path %>

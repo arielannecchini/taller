@@ -1,0 +1,49 @@
+<%= form_for(@street) do |f| %>
+  <% if @street.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@street.errors.count, "error") %> prohibited this street from being saved:</h2>
+
+      <ul>
+      <% @street.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :createStreet_type_id %><br>
+    <%= f.number_field :createStreet_type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :street %><br>
+    <%= f.text_field :street %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :floor %><br>
+    <%= f.number_field :floor %>
+  </div>
+  <div class="field">
+    <%= f.label :department %><br>
+    <%= f.number_field :department %>
+  </div>
+  <div class="field">
+    <%= f.label :locality_id %><br>
+    <%= f.number_field :locality_id %>
+  </div>
+  <div class="field">
+    <%= f.label :province_id %><br>
+    <%= f.number_field :province_id %>
+  </div>
+  <div class="field">
+    <%= f.label :country_id %><br>
+    <%= f.number_field :country_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
